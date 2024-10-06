@@ -12,7 +12,7 @@ export interface MouseTrailProps extends React.ComponentPropsWithRef<"div"> {
   trailCount?: number;
 }
 
-const TrailContainer = styled.div`
+const TrailContainer = styled.div<MouseTrailProps>`
   position: absolute;
   pointer-events: none;
   top: 0;
@@ -136,13 +136,7 @@ const MouseTrail: React.FC<MouseTrailProps> = ({
   });
 
   return (
-    <TrailContainer
-      color={color}
-      id={id}
-      inverted={inverted}
-      size={size}
-      {...props}
-    />
+    <TrailContainer color={color} id={id} inverted={inverted} size={size} {...props} />
   );
 };
 
